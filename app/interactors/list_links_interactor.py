@@ -11,8 +11,13 @@ class ListLinksResponseModel:
         self.links = links
 
     def __call__(self):
+        list_formatted = [{
+            "id": link.id,
+            "url": f"https://api.whatsapp.com/send?phone={link.phone_number}" +
+                   (f"&text={link.message}" if link.message is not None else "")
+        } for link in self.links]
         return ResponseSuccess({
-            "list": self.links
+            "list": list_formatted
         })
 
 
