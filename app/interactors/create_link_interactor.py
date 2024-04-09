@@ -18,7 +18,7 @@ class CreateLinkRequestModel:
                  user_id,
                  link_schema: CreateLinkSchema,):
         self.user_id = user_id
-        self.message = link_schema.message or ""
+        self.message = link_schema.message
         self.phone_number = link_schema.phone_number
 
 
@@ -29,7 +29,7 @@ class CreateLinkInteractor:
         self.request = request
         self.adapter = adapter
 
-    def _create_link(self, link_entity):
+    def _create_link(self, link_entity: LinkEntity):
         return self.adapter.create(link_entity)
 
     def run(self):

@@ -15,6 +15,7 @@ class LinkAlchemyAdapter(LinkRepository, ConnectionDatabase):
     def create(self, link_entity: LinkEntity):
         link = LinkModel(
             phone_number=link_entity.phone_number,
+            message=link_entity.message,
             user_id=link_entity.user_id,
         )
         self.session.add(link)
