@@ -6,16 +6,16 @@ services:
       .
     ports:
       - "8000:8000"
-    depends_on:
-      - db
-    environment:
-      DATABASE_URL: 'postgresql+psycopg2://root:root123@db:5432/mydatabase'
-
-  db:
-    image: postgres:latest
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root123
+#    depends_on:
+#      - db
+#    environment:
+#      DATABASE_URL: 'postgresql+psycopg2://root:root123@db:5432/mydatabase'
+#
+#  db:
+#    image: postgres:latest
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_DB: mydatabase
+#      POSTGRES_USER: root
+#      POSTGRES_PASSWORD: root123
