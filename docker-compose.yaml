@@ -8,9 +8,11 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      DATABASE_URL: 'postgresql+psycopg2://root:root123@db:5432/mydatabase'
 
   db:
-    image: postgres
+    image: postgres:latest
     ports:
       - "5432:5432"
     environment:
